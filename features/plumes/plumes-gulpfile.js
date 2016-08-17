@@ -38,7 +38,7 @@ module.exports = function($gulp) {
           public: './public'
         },
         default: $default,
-        watcher: process.env.WATCHER && process.env.WATCHER == 'true',
+        watcher: process.env.GULP_WATCHER && process.env.GULP_WATCHER == 'true',
         watchs: $watch
       });
     }]

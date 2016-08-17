@@ -6,7 +6,7 @@ module.exports = function($options, $done) {
   }
 
   if ($options && $options.owner && $options.owner == 'gulp') {
-    process.env.START_GULP = 'false';
+    process.env.GULP_START = 'false';
   }
 
   $done();
