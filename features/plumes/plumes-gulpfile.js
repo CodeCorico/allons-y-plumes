@@ -1,6 +1,9 @@
 'use strict';
 
 module.exports = function($gulp) {
+  if (process.env.PLUMES && process.env.PLUMES == 'false') {
+    return null;
+  }
 
   $gulp.task('plumes', function(done) {
     $gulp.src('node_modules/plumes/public/**')
