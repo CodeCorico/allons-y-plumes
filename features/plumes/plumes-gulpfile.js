@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = ['$gulp', function plumes($gulp) {
+module.exports = function($gulp) {
 
   $gulp.task('plumes', function(done) {
     $gulp.src('node_modules/plumes/public/**')
@@ -40,4 +40,4 @@ module.exports = ['$gulp', function plumes($gulp) {
       });
     }]
   };
-}];
+};
