@@ -27,7 +27,7 @@ module.exports = function($gulp) {
 
   return {
     task: 'plumes',
-    after: ['$gulp', '$watch', '$default', function($gulp, $watch, $default) {
+    after: function($gulp, $watch, $default) {
       var Plumes = require('plumes');
 
       new Plumes($gulp, {
@@ -41,6 +41,6 @@ module.exports = function($gulp) {
         watcher: process.env.GULP_WATCHER && process.env.GULP_WATCHER == 'true',
         watchs: $watch
       });
-    }]
+    }
   };
 };
