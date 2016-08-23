@@ -2,6 +2,7 @@
   "env": [{
     "type": "confirm",
     "name": "PLUMES",
-    "message": "Enable Plumes:"
+    "message": "Enable Plumes:",
+    "when": "GULP=true"
   }]
 }
