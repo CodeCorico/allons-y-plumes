@@ -27,8 +27,11 @@ module.exports = function($gulp) {
 
   return {
     task: 'plumes',
-    after: function($gulp, $watchs, $default) {
-      var Plumes = require('plumes');
+    after: function($allonsy, $gulp, $watchs, $lessPaths, $lessPlugins, $default) {
+      var path = require('path'),
+          Plumes = require('plumes');
+
+      $allonsy.log('allons-y-plumes', 'plumes-start');
 
       new Plumes($gulp, {
         path: {
@@ -38,6 +41,8 @@ module.exports = function($gulp) {
           public: './public'
         },
         default: $default,
+        lessPaths: $lessPaths,
+        lessPlugins: $lessPlugins,
         watcher: process.env.GULP_WATCHER && process.env.GULP_WATCHER == 'true',
         watchs: $watchs
       });
