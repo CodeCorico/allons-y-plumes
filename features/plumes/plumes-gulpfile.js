@@ -35,10 +35,23 @@ module.exports = function($gulp) {
 
       new Plumes($gulp, {
         path: {
-          less: './features/**/views/css/*.less',
-          js: './features/**/views/*.js',
-          html: './features/**/views/html/*.html',
-          public: './public'
+          less: [
+            path.resolve('features/**/views/css/*.less'),
+            path.resolve('node_modules/allons-y-*/features/**/views/css/*.less')
+          ],
+          js: [
+            path.resolve('features/**/views/*.js'),
+            path.resolve('node_modules/allons-y-*/features/**/views/*.js')
+          ],
+          html: [
+            path.resolve('features/**/views/html/*.html'),
+            path.resolve('node_modules/allons-y-*/features/**/views/html/*.html')
+          ],
+          resources: [
+            path.resolve('features/**/views/resources'),
+            path.resolve('node_modules/allons-y-*/features/**/views/resources')
+          ],
+          public: path.resolve('public')
         },
         default: $default,
         lessPaths: $lessPaths,
