@@ -7,7 +7,7 @@ module.exports = function($gulp) {
 
   $gulp.task('plumes', function(done) {
     $gulp.src('node_modules/plumes/public/**')
-      .pipe($gulp.dest('./public/vendor/plumes/'))
+      .pipe($gulp.dist('vendor/plumes'))
       .on('end', function() {
 
         $gulp.src([
@@ -20,38 +20,25 @@ module.exports = function($gulp) {
           'node_modules/ractive/ractive.min.js.map',
           'node_modules/ractive-require/dist/*'
         ])
-          .pipe($gulp.dest('./public/vendor'))
+          .pipe($gulp.dist('vendor'))
           .on('end', done);
       });
   });
 
   return {
-    task: 'plumes',
+    tasks: 'plumes',
     after: function($allonsy, $gulp, $watchs, $lessPaths, $lessPlugins, $default) {
-      var path = require('path'),
-          Plumes = require('plumes');
+      var Plumes = require('plumes');
 
       $allonsy.log('allons-y-plumes', 'plumes-start');
 
       new Plumes($gulp, {
         path: {
-          less: [
-            path.resolve('features/**/views/css/*.less'),
-            path.resolve('node_modules/allons-y-*/features/**/views/css/*.less')
-          ],
-          js: [
-            path.resolve('features/**/views/*.js'),
-            path.resolve('node_modules/allons-y-*/features/**/views/*.js')
-          ],
-          html: [
-            path.resolve('features/**/views/html/*.html'),
-            path.resolve('node_modules/allons-y-*/features/**/views/html/*.html')
-          ],
-          resources: [
-            path.resolve('features/**/views/resources'),
-            path.resolve('node_modules/allons-y-*/features/**/views/resources')
-          ],
-          public: path.resolve('public')
+          less: $allonsy.globPatterns('views/css/*.less'),
+          js: $allonsy.globPatterns('views/*.js'),
+          html: $allonsy.globPatterns('views/html/*.html'),
+          resources: $allonsy.globPatterns('views/resources'),
+          public: $gulp.dist
         },
         default: $default,
         lessPaths: $lessPaths,
