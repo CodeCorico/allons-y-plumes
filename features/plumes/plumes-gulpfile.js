@@ -32,6 +32,8 @@ module.exports = function($gulp) {
 
       $allonsy.log('allons-y-plumes', 'plumes-start');
 
+      $gulp.defaultTasksCount += 4;
+
       new Plumes($gulp, {
         path: {
           less: $allonsy.globPatterns('views/css/*.less'),
