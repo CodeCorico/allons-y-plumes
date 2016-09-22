@@ -21,6 +21,6 @@
     "jquery": "^3.1.0",
     "plumes": "^1.6.1",
     "ractive": "^0.7.3",
-    "ractive-require": "^0.6.8"
+    "ractive-require": "^0.6.9"
   }
 }
