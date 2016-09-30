@@ -18,6 +18,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "plumes": "^1.6.3"
+    "plumes": "^1.6.4"
   }
 }
