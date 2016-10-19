@@ -6,7 +6,7 @@ module.exports = function($gulp) {
   }
 
   $gulp.task('plumes', function(done) {
-    $gulp.src('node_modules/plumes/public/**')
+    $gulp.src('./node_modules/plumes/public/**')
       .pipe($gulp.dist('vendor/plumes'))
       .on('end', done);
   });
