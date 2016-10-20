@@ -1,23 +1,26 @@
 {
   "name": "allons-y-plumes",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Publish Plumes components and add gulp front special tasks.",
+  "license": "MIT",
+  "homepage": "http://allons-y.io",
+  "author": "CodeCorico <hello@codecorico.com>",
+  "bugs": "https://github.com/CodeCorico/allons-y-plumes/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/CodeCorico/allons-y-plumes.git"
   },
-  "author": "CodeCorico <hello@codecorico.com>",
-  "bugs": {
-    "url": "https://github.com/CodeCorico/allons-y-plumes/issues"
-  },
-  "homepage": "https://github.com/CodeCorico/allons-y-plumes",
   "engines": {
     "node": ">=4.1",
     "npm": ">=3.2"
   },
-  "license": "MIT",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js"
+  },
   "dependencies": {
+    "allons-y-gulp": "^1.0.0",
+    "allons-y-jquery": "^1.0.0",
+    "allons-y-ractive": "^1.0.0",
     "plumes": "^1.6.5"
   }
 }
