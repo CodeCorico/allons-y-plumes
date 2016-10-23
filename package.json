@@ -1,6 +1,6 @@
 {
   "name": "allons-y-plumes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Publish Plumes components and add gulp front special tasks.",
   "license": "MIT",
   "homepage": "http://allons-y.io",
