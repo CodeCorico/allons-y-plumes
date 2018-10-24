@@ -21,6 +21,12 @@
     "allons-y-gulp": "^1.0.3",
     "allons-y-jquery": "^1.0.0",
     "allons-y-ractive": "^1.0.1",
-    "plumes": "^1.6.7"
-  }
+    "plumes": "^1.6.7",
+    "snyk": "^1.104.2"
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
